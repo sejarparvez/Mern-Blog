@@ -4,7 +4,7 @@ import RecentModel from "./RecentModel";
 function Recent() {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize] = useState(10);
   const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {

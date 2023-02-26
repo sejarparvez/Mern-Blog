@@ -5,6 +5,7 @@ const routes = require("./Routes/routes");
 const cookieParser = require("cookie-parser");
 const getrouter = require("./Routes/GetRoutes");
 const postrouter = require("./Routes/PostRoutes");
+require("dotenv").config();
 
 const app = express();
 app.use(cookieParser());
@@ -15,7 +16,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bo
 mongoose.set("strictQuery", true);
 // Connect to MongoDB database using Mongoose
 mongoose
-  .connect("mongodb://localhost/my-database", {
+  .connect(process.env.MONGO_CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
